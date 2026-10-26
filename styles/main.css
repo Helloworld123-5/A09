@@ -1,7 +1,10 @@
 /* custom property */
 :root {
-	--accent-color: #800000;  /* could also be coded #800 */
-	--gradient-color: #f6bb73;
+    --accent-color: #800000;
+    --gradient-color: #f6bb73;
+    --menu-light: white;
+    --menu-mid: antiquewhite;
+    --menu-dark: #800000;
 }
 
 /* reset */
@@ -125,4 +128,80 @@ footer {
 }
 .large {
 	font-size: 125%;
+}
+
+/* Chapter 7 - Navigation menu */
+.navbar {
+    background-color: var(--accent-color);
+}
+
+.navbar a {
+    display: block;
+    padding: 1em;
+    margin: 0 1px 2px;
+    text-decoration: none;
+    color: var(--menu-light);
+}
+
+.navbar a:hover,
+.navbar a:focus,
+.navbar a.current {
+    background-color: var(--menu-mid);
+    color: var(--menu-dark);
+    font-style: normal;
+}
+
+.navbar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Horizontal navigation */
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.menu > li {
+    flex-basis: 20%;
+    text-align: center;
+    position: relative;
+}
+
+.menu small {
+    margin-left: .25em;
+}
+
+/* Dropdown navigation */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background-color: var(--accent-color);
+}
+
+.menu > li:hover > .submenu,
+.menu > li:focus-within > .submenu {
+    display: block;
+}
+
+.submenu > li a {
+    margin: 0 2px 2px;
+}
+
+.menu > li:first-child > a {
+    margin-left: 0;
+}
+
+.menu > li:last-child > a {
+    margin-right: 0;
+}
+
+/* Circle bullets for ticket packages */
+section ul {
+    list-style-type: circle;
 }
