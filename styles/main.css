@@ -200,7 +200,9 @@ footer {
 .menu > li:last-child > a {
     margin-right: 0;
 }
-
+section ul {
+    list-style-type: circle;
+}
 /* Circle bullets for ticket packages */
 section ul {
     list-style-type: circle;
